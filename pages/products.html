@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Catálogo de productos LUSH Cosmetics con filtros, búsqueda y carrito interactivo.">
+  <title>Productos | LUSH Cosmetics</title>
+  <link rel="icon" href="../assets/lush_tabicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="products" data-asset-base="../">
+  <div class="site-overlay" data-overlay hidden></div>
+
+  <header class="site-header">
+    <div class="announcement-bar">
+      <div class="shell announcement-bar__inner">
+        Envío gratis en pedidos superiores a 50 €
+      </div>
+    </div>
+
+    <div class="shell site-header__inner">
+      <h1 class="brand-logo">
+        <a href="../index.html" aria-label="LUSH Cosmetics">
+          <span class="sr-only">LUSH Cosmetics</span>
+        </a>
+      </h1>
+
+      <nav class="site-nav site-nav--desktop" aria-label="Principal">
+        <a class="site-nav__link" href="products.html" aria-current="page">Productos</a>
+        <a class="site-nav__link" href="../index.html#needs">Comprar según necesidad</a>
+        <a class="site-nav__link" href="../index.html#values">Nuestros valores</a>
+      </nav>
+
+      <div class="site-actions">
+        <button class="icon-button icon-button--menu" type="button" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <span class="sr-only">Abrir menú</span>
+        </button>
+
+        <a class="icon-button icon-button--search" href="#catalog" aria-label="Buscar productos">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        </a>
+
+        <button class="icon-button" type="button" data-account-button aria-label="Mi cuenta">
+          <i class="fa-regular fa-user" aria-hidden="true"></i>
+        </button>
+
+        <button class="icon-button icon-button--cart" type="button" data-cart-toggle aria-controls="cart-drawer" aria-expanded="false">
+          <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+          <span class="cart-badge" data-cart-count>0</span>
+          <span class="sr-only">Abrir carrito</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" data-mobile-menu hidden aria-label="Menú móvil">
+    <div class="mobile-menu__panel shell">
+      <div class="mobile-menu__header">
+        <span>Menú</span>
+        <button class="icon-button icon-button--close" type="button" data-menu-close aria-label="Cerrar menú">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="mobile-menu__links">
+        <a href="products.html" aria-current="page">Productos</a>
+        <a href="../index.html#categories">Explora por categoría</a>
+        <a href="../index.html#needs">Elige según lo que necesitas</a>
+        <a href="../index.html#values">Nuestros valores</a>
+        <a href="#newsletter">Novedades</a>
+      </div>
+
+      <div class="mobile-menu__actions">
+        <a class="button button--ghost button--full" href="#catalog">Buscar productos</a>
+        <button class="button button--ghost button--full" type="button" data-account-button>Mi cuenta</button>
+      </div>
+    </div>
+  </nav>
+
+  <aside class="cart-drawer" id="cart-drawer" data-cart-drawer hidden aria-label="Carrito de compra">
+    <div class="cart-drawer__panel">
+      <div class="cart-drawer__header">
+        <div>
+          <p class="eyebrow eyebrow--small">Tu carrito</p>
+          <h2>Lista para llevar</h2>
+        </div>
+        <button class="icon-button icon-button--close" type="button" data-cart-close aria-label="Cerrar carrito">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="cart-drawer__content" data-cart-items></div>
+
+      <div class="cart-drawer__summary">
+        <div class="cart-drawer__totals">
+          <span>Total</span>
+          <strong data-cart-total>0,00 €</strong>
+        </div>
+        <p class="cart-drawer__shipping" data-cart-shipping>Te faltan 50,00 € para envío gratis.</p>
+        <button class="button button--primary button--full" type="button">Finalizar compra</button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <nav class="shell breadcrumb" aria-label="Miga de pan">
+      <a href="../index.html">Inicio</a>
+      <span aria-hidden="true">/</span>
+      <span>Productos</span>
+    </nav>
+
+    <section class="hero hero--products">
+      <div class="shell hero__grid hero__grid--products">
+        <div class="hero__copy hero__copy--products">
+          <p class="eyebrow">Nuestros productos</p>
+          <h2 class="hero__title hero__title--products">
+            Nuestros<br>
+            <span class="serif-accent">Productos</span>
+          </h2>
+          <p class="hero__lead">Cuidado capilar fresco y efectivo para diferentes tipos de cabello, texturas y rutinas.</p>
+          <p class="hero__lead hero__lead--secondary">Elige por necesidad, formato o acabado.</p>
+        </div>
+
+        <div class="hero__visual hero__visual--products">
+          <img
+            class="hero__visual-image"
+            src="../assets/webp/hair-care/hair-care-header-desktop.webp"
+            srcset="../assets/webp/hair-care/hair-care-header-mobile.webp 640w, ../assets/webp/hair-care/hair-care-header-tablet.webp 960w, ../assets/webp/hair-care/hair-care-header-desktop.webp 1400w"
+            sizes="(min-width: 1200px) 56vw, 100vw"
+            alt="Colección Hair Care de LUSH"
+            loading="eager"
+            fetchpriority="high">
+
+          <img class="decor-ellipse decor-ellipse--products" src="../assets/pink_elipse.svg" alt="" aria-hidden="true">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--bestsellers" id="best-sellers">
+      <div class="shell section-heading">
+        <p class="eyebrow">Explora Best Sellers</p>
+        <h2>Explora Best Sellers</h2>
+        <p>Elige por tipo de producto y entra directo a lo que más se usa en la rutina.</p>
+      </div>
+
+      <div class="shell seller-grid">
+        <button class="seller-card seller-card--one" type="button" data-type-chip="Shampoo">
+          <img
+            src="../assets/webp/hair-care/hair-care-bloque-2-1-desktop.webp"
+            srcset="../assets/webp/hair-care/hair-care-bloque-2-1-mobile.webp 640w, ../assets/webp/hair-care/hair-care-bloque-2-1-tablet.webp 960w, ../assets/webp/hair-care/hair-care-bloque-2-1-desktop.webp 1400w"
+            sizes="(min-width: 1200px) 24vw, 50vw"
+            alt=""
+            aria-hidden="true"
+            loading="lazy">
+          <span class="seller-card__label">Shampoo</span>
+          <span class="seller-card__action" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+        </button>
+
+        <button class="seller-card seller-card--two" type="button" data-type-chip="Acondicionador">
+          <img
+            src="../assets/webp/hair-care/hair-care-bloque-2-2-desktop.webp"
+            srcset="../assets/webp/hair-care/hair-care-bloque-2-2-mobile.webp 640w, ../assets/webp/hair-care/hair-care-bloque-2-2-tablet.webp 960w, ../assets/webp/hair-care/hair-care-bloque-2-2-desktop.webp 1400w"
+            sizes="(min-width: 1200px) 24vw, 50vw"
+            alt=""
+            aria-hidden="true"
+            loading="lazy">
+          <span class="seller-card__label">Acondicionador</span>
+          <span class="seller-card__action" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+        </button>
+
+        <button class="seller-card seller-card--three" type="button" data-type-chip="Tratamientos">
+          <img
+            src="../assets/webp/hair-care/hair-care-bloque-2-3-desktop.webp"
+            srcset="../assets/webp/hair-care/hair-care-bloque-2-3-mobile.webp 640w, ../assets/webp/hair-care/hair-care-bloque-2-3-tablet.webp 960w, ../assets/webp/hair-care/hair-care-bloque-2-3-desktop.webp 1400w"
+            sizes="(min-width: 1200px) 24vw, 50vw"
+            alt=""
+            aria-hidden="true"
+            loading="lazy">
+          <span class="seller-card__label">Tratamientos</span>
+          <span class="seller-card__action" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+        </button>
+
+        <button class="seller-card seller-card--four" type="button" data-type-chip="Styling">
+          <img
+            src="../assets/webp/hair-care/hair-care-bloque-2-4-desktop.webp"
+            srcset="../assets/webp/hair-care/hair-care-bloque-2-4-mobile.webp 640w, ../assets/webp/hair-care/hair-care-bloque-2-4-tablet.webp 960w, ../assets/webp/hair-care/hair-care-bloque-2-4-desktop.webp 1400w"
+            sizes="(min-width: 1200px) 24vw, 50vw"
+            alt=""
+            aria-hidden="true"
+            loading="lazy">
+          <span class="seller-card__label">Styling</span>
+          <span class="seller-card__action" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section section--catalog" id="catalog">
+      <div class="shell catalog-toolbar">
+        <strong class="catalog-toolbar__count"><span data-results-count>82</span> productos</strong>
+
+        <label class="catalog-sort">
+          <span class="catalog-sort__label">Ordenar por</span>
+          <select data-sort-select>
+            <option value="relevance">Relevancia</option>
+            <option value="featured">Más vendidos</option>
+            <option value="price-asc">Precio: menor a mayor</option>
+            <option value="price-desc">Precio: mayor a menor</option>
+            <option value="newest">Novedades</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="shell catalog-layout">
+        <aside class="filters-panel" id="filters-panel" data-filters-panel>
+          <div class="filters-panel__header">
+            <div>
+              <p class="eyebrow eyebrow--small">Filtrar y ordenar</p>
+              <h2>Filtrar y ordenar</h2>
+            </div>
+            <button class="icon-button icon-button--close filters-panel__close" type="button" data-filters-close aria-label="Cerrar filtros">
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <label class="filters-search" for="catalog-search">
+            <span class="filters-search__label">Buscar</span>
+            <input id="catalog-search" type="search" name="search" placeholder="Buscar productos" autocomplete="off" data-search-input>
+          </label>
+
+          <form class="filters-form" data-filters-form>
+            <details class="filter-accordion" open>
+              <summary>Necesidad capilar</summary>
+              <div class="filter-accordion__content">
+                <label><input type="radio" name="need" value="Hidratación">Hidratación</label>
+                <label><input type="radio" name="need" value="Reparación">Reparación</label>
+                <label><input type="radio" name="need" value="Volumen">Volumen</label>
+                <label><input type="radio" name="need" value="Sensibilidad">Sensibilidad</label>
+              </div>
+            </details>
+
+            <details class="filter-accordion">
+              <summary>Tipo de producto</summary>
+              <div class="filter-accordion__content">
+                <label><input type="checkbox" name="hairType" value="Seco">Seco</label>
+                <label><input type="checkbox" name="hairType" value="Graso">Graso</label>
+                <label><input type="checkbox" name="hairType" value="Normal">Normal</label>
+                <label><input type="checkbox" name="hairType" value="Rizado">Rizado</label>
+              </div>
+            </details>
+
+            <details class="filter-accordion">
+              <summary>Ingredientes</summary>
+              <div class="filter-accordion__content">
+                <label><input type="checkbox" name="ingredient" value="Miel">Miel</label>
+                <label><input type="checkbox" name="ingredient" value="Leche de almendras">Leche de almendras</label>
+                <label><input type="checkbox" name="ingredient" value="Menta">Menta</label>
+                <label><input type="checkbox" name="ingredient" value="Jojoba">Jojoba</label>
+                <label><input type="checkbox" name="ingredient" value="Banana">Banana</label>
+                <label><input type="checkbox" name="ingredient" value="Lavanda">Lavanda</label>
+                <label><input type="checkbox" name="ingredient" value="Wasabi">Wasabi</label>
+                <label><input type="checkbox" name="ingredient" value="Sal marina">Sal marina</label>
+              </div>
+            </details>
+
+            <details class="filter-accordion">
+              <summary>Formato</summary>
+              <div class="filter-accordion__content">
+                <label><input type="checkbox" name="format" value="Sólido">Sólido</label>
+                <label><input type="checkbox" name="format" value="Líquido">Líquido</label>
+                <label><input type="checkbox" name="format" value="Spray">Spray</label>
+                <label><input type="checkbox" name="format" value="Crema">Crema</label>
+                <label><input type="checkbox" name="format" value="Mascarilla">Mascarilla</label>
+              </div>
+            </details>
+
+            <details class="filter-accordion">
+              <summary>Packaging</summary>
+              <div class="filter-accordion__content">
+                <label><input type="checkbox" name="packaging" value="Sin envase">Sin envase</label>
+                <label><input type="checkbox" name="packaging" value="Con envase">Con envase</label>
+              </div>
+            </details>
+
+            <details class="filter-accordion">
+              <summary>Precio</summary>
+              <div class="filter-accordion__content">
+                <label><input type="radio" name="price" value="all" checked>Todos</label>
+                <label><input type="radio" name="price" value="under12">Menos de 12 €</label>
+                <label><input type="radio" name="price" value="12to18">Entre 12 € y 18 €</label>
+                <label><input type="radio" name="price" value="over18">Más de 18 €</label>
+              </div>
+            </details>
+
+            <div class="filters-form__actions">
+              <button class="button button--ghost button--full" type="button" data-filters-clear>Limpiar filtros</button>
+              <button class="button button--primary button--full" type="button" data-filters-apply>Aplicar filtros</button>
+            </div>
+          </form>
+        </aside>
+
+        <section class="catalog-results">
+          <div class="catalog-grid" data-catalog-grid></div>
+
+          <p class="catalog-empty" data-empty-state hidden>
+            No encontramos productos con esos filtros. Prueba con otra combinación o limpia los filtros.
+          </p>
+        </section>
+      </div>
+    </section>
+
+    <section class="section section--guidance">
+      <div class="shell guidance-panel">
+        <div class="guidance-panel__header">
+          <div>
+            <p class="eyebrow eyebrow--light">¿No sabes qué necesita tu cabello?</p>
+            <h2>¿No sabes qué necesita tu cabello?</h2>
+            <p>Explora recomendaciones según hidratación, reparación, volumen o sensibilidad.</p>
+          </div>
+          <button class="button button--light button--small" type="button" data-clear-catalog-filters>Encontrar tu rutina</button>
+        </div>
+
+        <div class="guidance-rows">
+          <button class="row-card row-card--dark" type="button" data-quick-filter='{"need":["Hidratación"],"hairType":["Seco"]}'>
+            <img
+              src="../assets/webp/hair-care/hair-care-bloque-3-1-desktop.webp"
+              srcset="../assets/webp/hair-care/hair-care-bloque-3-1-mobile.webp 640w, ../assets/webp/hair-care/hair-care-bloque-3-1-tablet.webp 960w, ../assets/webp/hair-care/hair-care-bloque-3-1-desktop.webp 1400w"
+              sizes="56px"
+              alt=""
+              aria-hidden="true"
+              loading="lazy">
+            <div class="row-card__copy">
+              <h3>Para cabello seco</h3>
+              <p>Nutrición y brillo para recuperar suavidad.</p>
+            </div>
+            <span class="row-card__action" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+          </button>
+
+          <button class="row-card row-card--dark" type="button" data-quick-filter='{"need":["Sensibilidad"]}'>
+            <img
+              src="../assets/webp/hair-care/hair-care-bloque-3-2-desktop.webp"
+              srcset="../assets/webp/hair-care/hair-care-bloque-3-2-mobile.webp 640w, ../assets/webp/hair-care/hair-care-bloque-3-2-tablet.webp 960w, ../assets/webp/hair-care/hair-care-bloque-3-2-desktop.webp 1400w"
+              sizes="56px"
+              alt=""
+              aria-hidden="true"
+              loading="lazy">
+            <div class="row-card__copy">
+              <h3>Para cuero cabelludo sensible</h3>
+              <p>Fórmulas suaves y equilibradas.</p>
+            </div>
+            <span class="row-card__action" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+          </button>
+
+          <button class="row-card row-card--dark" type="button" data-quick-filter='{"packaging":["Sin envase"]}'>
+            <img
+              src="../assets/webp/hair-care/hair-care-bloque-3-3-desktop.webp"
+              srcset="../assets/webp/hair-care/hair-care-bloque-3-3-mobile.webp 640w, ../assets/webp/hair-care/hair-care-bloque-3-3-tablet.webp 960w, ../assets/webp/hair-care/hair-care-bloque-3-3-desktop.webp 1400w"
+              sizes="56px"
+              alt=""
+              aria-hidden="true"
+              loading="lazy">
+            <div class="row-card__copy">
+              <h3>Para una rutina sin packaging</h3>
+              <p>Sólidos concentrados, menos residuos.</p>
+            </div>
+            <span class="row-card__action" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--combo">
+      <div class="shell section-heading">
+        <p class="eyebrow">Combo para una rutina completa</p>
+        <h2>Combo para una rutina completa</h2>
+        <p>Arma una rutina que combine limpieza, cuidado y acabado sin complicarte.</p>
+      </div>
+
+      <div class="shell combo-grid">
+        <article class="combo-card">
+          <img
+            src="../assets/webp/hair-care/hair-care-bloque-5-1-desktop.webp"
+            srcset="../assets/webp/hair-care/hair-care-bloque-5-1-mobile.webp 640w, ../assets/webp/hair-care/hair-care-bloque-5-1-tablet.webp 960w, ../assets/webp/hair-care/hair-care-bloque-5-1-desktop.webp 1400w"
+            sizes="(min-width: 1200px) 25vw, 100vw"
+            alt="Shampoo sólido"
+            loading="lazy">
+          <div class="combo-card__copy">
+            <h3>Shampoo sólido</h3>
+            <p>Una opción concentrada y sin envase para limpiar el cabello de forma eficaz.</p>
+          </div>
+        </article>
+
+        <article class="combo-card">
+          <img
+            src="../assets/webp/hair-care/hair-care-bloque-5-2-desktop.webp"
+            srcset="../assets/webp/hair-care/hair-care-bloque-5-2-mobile.webp 640w, ../assets/webp/hair-care/hair-care-bloque-5-2-tablet.webp 960w, ../assets/webp/hair-care/hair-care-bloque-5-2-desktop.webp 1400w"
+            sizes="(min-width: 1200px) 25vw, 100vw"
+            alt="Acondicionadores"
+            loading="lazy">
+          <div class="combo-card__copy">
+            <h3>Acondicionadores</h3>
+            <p>Fórmulas para suavizar, hidratar y facilitar el peinado.</p>
+          </div>
+        </article>
+
+        <article class="combo-card">
+          <img
+            src="../assets/webp/hair-care/hair-care-bloque-5-3-desktop.webp"
+            srcset="../assets/webp/hair-care/hair-care-bloque-5-3-mobile.webp 640w, ../assets/webp/hair-care/hair-care-bloque-5-3-tablet.webp 960w, ../assets/webp/hair-care/hair-care-bloque-5-3-desktop.webp 1400w"
+            sizes="(min-width: 1200px) 25vw, 100vw"
+            alt="Tratamientos"
+            loading="lazy">
+          <div class="combo-card__copy">
+            <h3>Tratamientos</h3>
+            <p>Cuidados específicos para reparar, nutrir y fortalecer.</p>
+          </div>
+        </article>
+
+        <article class="combo-card">
+          <img
+            src="../assets/webp/hair-care/hair-care-bloque-6-1-desktop.webp"
+            srcset="../assets/webp/hair-care/hair-care-bloque-6-1-mobile.webp 640w, ../assets/webp/hair-care/hair-care-bloque-6-1-tablet.webp 960w, ../assets/webp/hair-care/hair-care-bloque-6-1-desktop.webp 1400w"
+            sizes="(min-width: 1200px) 25vw, 100vw"
+            alt="Serum"
+            loading="lazy">
+          <div class="combo-card__copy">
+            <h3>Serum</h3>
+            <p>Alternativas de acabado natural para completar tu rutina diaria.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="newsletter" id="newsletter">
+      <div class="shell newsletter__panel">
+        <div class="newsletter__copy">
+          <p class="eyebrow">Newsletter</p>
+          <h2>Novedades frescas, directo a tu correo</h2>
+          <p>Recibe lanzamientos, historias, campañas y recomendaciones de productos.</p>
+        </div>
+
+        <form class="newsletter__form" data-newsletter-form>
+          <label class="field field--email" for="newsletter-email">
+            <span class="sr-only">Correo electrónico</span>
+            <input id="newsletter-email" name="email" type="email" placeholder="nombre@correo.com" autocomplete="email" required>
+          </label>
+          <button class="button button--primary" type="submit">Suscribirme</button>
+        </form>
+
+        <p class="newsletter__note">Tu información está segura. No la compartimos con terceros.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img class="section-break section-break--footer" src="../assets/WaveTop_black.svg" alt="" aria-hidden="true">
+
+    <div class="shell site-footer__inner">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <img src="../assets/lush_logo.svg" alt="LUSH Cosmetics" class="site-footer__logo">
+          <p>Cosmética fresca, hecha a mano y con menos packaging.</p>
+        </div>
+
+        <div class="site-footer__social" aria-label="Redes sociales">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div class="site-footer__columns">
+        <div class="footer-column">
+          <h3>Atención al cliente</h3>
+          <a href="#">Contacto</a>
+          <a href="#">Envíos</a>
+          <a href="#">Devoluciones</a>
+          <a href="#">Preguntas frecuentes</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Sobre Lush</h3>
+          <a href="../index.html#values">Nuestra historia</a>
+          <a href="../index.html#values">Nuestros valores</a>
+          <a href="../index.html#values">Ingredientes</a>
+          <a href="../index.html#values">Contra el testeo en animales</a>
+          <a href="../index.html#values">Trabaja con nosotros</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Más información</h3>
+          <a href="#">Tiendas</a>
+          <a href="#">Tarjetas de regalo</a>
+          <a href="#">Accesibilidad</a>
+          <a href="#">Privacidad</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+
+      <div class="site-footer__legal">© 2024 Lush Fresh Handmade Cosmetics. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
