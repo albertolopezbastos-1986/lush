@@ -9,8 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body data-page="home" data-asset-base="">
   <div class="site-overlay" data-overlay hidden></div>
@@ -23,14 +24,14 @@
     </div>
 
     <div class="shell site-header__inner">
-      <h1 class="brand-logo">
+      <h1 class="logo brand-logo">
         <a href="index.html" aria-label="LUSH Cosmetics">
           <span class="sr-only">LUSH Cosmetics</span>
         </a>
       </h1>
 
       <nav class="site-nav site-nav--desktop" aria-label="Principal">
-        <a class="site-nav__link" href="pages/products.html">Productos</a>
+        <a class="site-nav__link" href="secciones/productos.html">Productos</a>
         <a class="site-nav__link" href="#needs">Comprar según necesidad</a>
         <a class="site-nav__link" href="#values">Nuestros valores</a>
       </nav>
@@ -41,7 +42,7 @@
           <span class="sr-only">Abrir menú</span>
         </button>
 
-        <a class="icon-button icon-button--search" href="pages/products.html#catalog" aria-label="Buscar productos">
+        <a class="icon-button icon-button--search" href="secciones/productos.html#catalog" aria-label="Buscar productos">
           <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
         </a>
 
@@ -68,7 +69,7 @@
       </div>
 
       <div class="mobile-menu__links">
-        <a href="pages/products.html">Productos</a>
+        <a href="secciones/productos.html">Productos</a>
         <a href="#categories">Explora por categoría</a>
         <a href="#needs">Elige según lo que necesitas</a>
         <a href="#values">Nuestros valores</a>
@@ -76,7 +77,7 @@
       </div>
 
       <div class="mobile-menu__actions">
-        <a class="button button--ghost button--full" href="pages/products.html#catalog">Buscar productos</a>
+        <a class="button button--ghost button--full" href="secciones/productos.html#catalog">Buscar productos</a>
         <button class="button button--ghost button--full" type="button" data-account-button>Mi cuenta</button>
       </div>
     </div>
@@ -109,8 +110,8 @@
 
   <main>
     <section class="hero hero--home">
-      <div class="shell hero__grid hero__grid--home">
-        <div class="hero__copy">
+      <div class="shell hero__grid hero__grid--home row align-items-center g-5">
+        <div class="hero__copy col-12 col-lg-5">
           <p class="eyebrow">Cosmética fresca y artesanal</p>
           <h2 class="hero__title">
             Cosmética<br>
@@ -123,12 +124,12 @@
             <br>menos packaging.</p>
 
           <div class="hero__actions">
-            <a class="button button--accent" href="pages/products.html">Comprar productos</a>
+            <a class="button button--accent" href="secciones/productos.html">Comprar productos</a>
             <a class="button button--outline" href="#categories">Explorar categorías</a>
           </div>
         </div>
 
-        <div class="hero__visual">
+        <div class="hero__visual col-12 col-lg-7">
           <img
           class="hero__visual-image"
           src="assets/webp/imagen-home/home-header-desktop.jpg"
@@ -165,8 +166,8 @@
     <img class="section-break section-break--pink" src="assets/WaveBottom.svg" alt="" aria-hidden="true">
 
     <section class="feature-band">
-      <div class="shell feature-band__grid">
-        <div class="feature-band__copy">
+      <div class="shell feature-band__grid row align-items-center g-5">
+        <div class="feature-band__copy col-12 col-lg-6">
           <h2>Frescura, color y <span class="serif-accent">cuidado</span> hecho a mano</h2>
           <p>Creamos productos efectivos y sensoriales con ingredientes
             <br>frescos, procesos artesanales y una mirada más responsable
@@ -182,7 +183,7 @@
           <a class="button button--light" href="#values">Conocer nuestros valores →</a>
         </div>
 
-        <div class="feature-band__visual">
+        <div class="feature-band__visual col-12 col-lg-6">
           <img
             src="assets/webp/imagen-home/home-bloque-1-desktop.png "
             srcset="assets/webp/imagen-home/home-bloque-1-mobile.png 640w, assets/webp/imagen-home/home-bloque-1-tablet.png 960w, assets/webp/imagen-home/home-bloque-1-desktop.png 1400w"
@@ -195,13 +196,12 @@
 
     <section class="section section--categories" id="categories">
       <div class="shell section-heading section-heading--home">
-        <p class="eyebrow">Explora por categoría</p>
         <h2>Explora por categoría</h2>
-        <p>Encuentra productos pensados para tu rutina de cuidado, baño y bienestar.</p>
+        <p>Encontrá productos para tu rutina de cuidado, baño y bienestar.</p>
       </div>
 
-      <div class="shell category-grid">
-        <a class="category-card category-card--tall" href="pages/products.html">
+      <div class="shell category-grid row g-4">
+        <a class="category-card category-card--tall col-12 col-md-6" href="secciones/productos.html">
           <img
             src="assets/webp/imagen-home/home-bloque-2-1-desktop.webp"
             srcset="assets/webp/imagen-home/home-bloque-2-1-mobile.webp 640w, assets/webp/imagen-home/home-bloque-2-1-tablet.webp 960w, assets/webp/imagen-home/home-bloque-2-1-desktop.webp 1400w"
@@ -209,12 +209,11 @@
             alt="Baño y ducha"
             loading="lazy">
           <div class="category-card__content">
-            <span>Baño y ducha</span>
-            <h3>Cuidado capilar</h3>
+            <h3>Baño y Ducha</h3>
           </div>
         </a>
 
-        <a class="category-card category-card--wide" href="pages/products.html">
+        <a class="category-card category-card--wide col-12 col-md-6" href="secciones/productos.html">
           <img
             src="assets/webp/imagen-home/home-bloque-2-2-desktop.webp"
             srcset="assets/webp/imagen-home/home-bloque-2-2-mobile.webp 640w, assets/webp/imagen-home/home-bloque-2-2-tablet.webp 960w, assets/webp/imagen-home/home-bloque-2-2-desktop.webp 1400w"
@@ -222,12 +221,11 @@
             alt="Hair care"
             loading="lazy">
           <div class="category-card__content">
-            <span>Hair Care</span>
-            <h3>Fórmulas de uso diario</h3>
+            <h3>Hair Care</h3>
           </div>
         </a>
 
-        <a class="category-card category-card--small" href="pages/products.html">
+        <a class="category-card category-card--small col-12 col-md-6" href="secciones/productos.html">
           <img
             src="assets/webp/imagen-home/home-bloque-2-3-desktop.webp"
             srcset="assets/webp/imagen-home/home-bloque-2-3-mobile.webp 640w, assets/webp/imagen-home/home-bloque-2-3-tablet.webp 960w, assets/webp/imagen-home/home-bloque-2-3-desktop.webp 1400w"
@@ -235,12 +233,11 @@
             alt="Cuidado de la piel"
             loading="lazy">
           <div class="category-card__content">
-            <span>Cuidado de la piel</span>
-            <h3>Texturas que despiertan</h3>
+            <h3>Cuidado de la piel</h3>
           </div>
         </a>
 
-        <a class="category-card category-card--small" href="pages/products.html">
+        <a class="category-card category-card--small col-12 col-md-6" href="secciones/productos.html">
           <img
             src="assets/webp/imagen-home/home-bloque-2-4-desktop.webp"
             srcset="assets/webp/imagen-home/home-bloque-2-4-mobile.webp 640w, assets/webp/imagen-home/home-bloque-2-4-tablet.webp 960w, assets/webp/imagen-home/home-bloque-2-4-desktop.webp 1400w"
@@ -248,8 +245,7 @@
             alt="Regalos"
             loading="lazy">
           <div class="category-card__content">
-            <span>Regalos</span>
-            <h3>Detalles listos para sorprender</h3>
+            <h3>Regalos</h3>
           </div>
         </a>
       </div>
@@ -260,7 +256,6 @@
     <section class="section section--needs" id="needs">
       <div class="shell section-heading section-heading--split section-heading--dark">
         <div>
-          <p class="eyebrow eyebrow--light">Elige según lo que necesitas</p>
           <h2>Elige según lo que necesitas</h2>
           <p>Explora productos pensados para tu rutina, tu piel y tu cabello.</p>
         </div>
@@ -337,33 +332,42 @@
       </div>
     </section>
 
-    <img class="section-break section-break--cream" src="assets/wave2_black.svg" alt="" aria-hidden="true">
-
     <section class="section section--favorites">
       <div class="shell section-heading section-heading--split">
         <div>
-          <p class="eyebrow">Favoritos de Lush</p>
           <h2>Favoritos de Lush</h2>
           <p>Productos elegidos una y otra vez por su aroma, textura y efectividad.</p>
         </div>
-        <a class="button button--ghost button--small" href="pages/products.html">Ver productos</a>
+        <a class="button button--ghost button--small" href="secciones/productos.html">Ver productos</a>
       </div>
 
-      <div class="shell product-grid product-grid--home" data-product-list="honey,super-milk,roots,power" data-card-variant="home"></div>
+      <div class="shell catalog-stack">
+        <div class="product-grid product-grid--home row g-4" data-product-list="honey,super-milk,roots,power" data-card-variant="home"></div>
+
+        <div class="catalog-stack-controls" data-home-stack-controls hidden>
+          <button class="catalog-stack-arrow catalog-stack-arrow--prev" type="button" data-home-prev aria-label="Producto anterior">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <span class="catalog-stack-position" data-home-stack-position aria-live="polite"></span>
+          <button class="catalog-stack-arrow catalog-stack-arrow--next" type="button" data-home-next aria-label="Producto siguiente">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
     </section>
 
     <img class="section-break section-break--dark" src="assets/WaveBottom_black.svg" alt="" aria-hidden="true">
 
     <section class="section section--values" id="values">
-      <div class="shell values-layout">
-        <div class="values-layout__copy">
+      <div class="shell values-layout row align-items-center g-5">
+        <div class="values-layout__copy col-12 col-lg-5">
           <p class="eyebrow eyebrow--light">Nuestros valores</p>
-          <h2>Cuidar también es <span class="serif-accent">tomar</span> posición</h2>
+          <h2>Cuidar también es <span class="serif-accent">tomar posición</span></h2>
           <p>Conoce nuestra forma de hacer las cosas y por qué cada decisión de producto importa.</p>
-          <a class="button button--light" href="pages/products.html">Conocer nuestros valores</a>
+          <a class="button button--light" href="secciones/productos.html">Conocer nuestros valores</a>
         </div>
 
-        <div class="values-layout__list" aria-label="Valores de marca">
+        <div class="values-layout__list col-12 col-lg-7" aria-label="Valores de marca">
           <article class="value-row">
             <span class="value-row__icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>
             <div class="value-row__copy">
@@ -413,15 +417,13 @@
           <p class="eyebrow eyebrow--light">Campaña naked</p>
           <h2>Más producto. <span class="serif-accent">Menos</span> envase.</h2>
           <p>Descubre alternativas sólidas y sin packaging para transformar tu rutina cotidiana.</p>
-          <a class="button button--light" href="pages/products.html">Explorar productos naked</a>
+          <a class="button button--light" href="secciones/productos.html">Explorar productos naked</a>
         </div>
       </div>
       <img class="decor-ellipse decor-ellipse--campaign" src="assets/pink_elipse.svg" alt="" aria-hidden="true">
 
 
     </section>
-
-    <img class="section-break section-break--pink" src="assets/WaveBottom.svg" alt="" aria-hidden="true">
 
     <section class="newsletter" id="newsletter">
       <div class="shell newsletter__panel">
@@ -445,8 +447,6 @@
   </main>
 
   <footer class="site-footer">
-    <img class="section-break section-break--footer" src="assets/WaveTop_black.svg" alt="" aria-hidden="true">
-
     <div class="shell site-footer__inner">
       <div class="site-footer__top">
         <div class="site-footer__brand">
@@ -463,7 +463,7 @@
 
       <div class="site-footer__columns">
         <div class="footer-column">
-          <h3>Atención al cliente</h3>
+          <p class="footer-column__title">Atención al cliente</p>
           <a href="#">Contacto</a>
           <a href="#">Envíos</a>
           <a href="#">Devoluciones</a>
@@ -471,7 +471,7 @@
         </div>
 
         <div class="footer-column">
-          <h3>Sobre Lush</h3>
+          <p class="footer-column__title">Sobre Lush</p>
           <a href="#values">Nuestra historia</a>
           <a href="#values">Nuestros valores</a>
           <a href="#values">Ingredientes</a>
@@ -480,7 +480,7 @@
         </div>
 
         <div class="footer-column">
-          <h3>Más información</h3>
+          <p class="footer-column__title">Más información</p>
           <a href="#">Tiendas</a>
           <a href="#">Tarjetas de regalo</a>
           <a href="#">Accesibilidad</a>

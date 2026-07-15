@@ -15,8 +15,8 @@
       price: 10,
       badge: "Sin envase",
       description: "Aporta suavidad y brillo.",
-      image: "assets/Hair care/Hair Care - bloque -4 - 1.jpg",
-      homeImage: "assets/Imagen home/Home - bloque- 1.jpg",
+      image: "assets/webp/hair-care/hair-care-bloque-4-1-desktop.webp",
+      homeImage: "assets/webp/imagen-home/home-bloque-4-1-desktop.webp",
       featuredRank: 1,
       isBestseller: true,
       isNew: false,
@@ -34,8 +34,8 @@
       price: 18,
       badge: "Más vendido",
       description: "Hidrata, suaviza y facilita el peinado.",
-      image: "assets/Hair care/Hair Care - bloque -4 - 2.jpg",
-      homeImage: "assets/Hair care/Hair Care - bloque -4 - 8.jpg",
+      image: "assets/webp/hair-care/hair-care-bloque-4-2-desktop.webp",
+      homeImage: "assets/webp/hair-care/hair-care-bloque-4-8-desktop.webp",
       featuredRank: 2,
       isBestseller: true,
       isNew: false,
@@ -53,8 +53,8 @@
       price: 14,
       badge: "Hecho a mano",
       description: "Equilibra y revitaliza el cuero cabelludo.",
-      image: "assets/Hair care/Hair Care - bloque -4 - 3.jpg",
-      homeImage: "assets/Hair care/Hair Care - bloque -4 - 3.jpg",
+      image: "assets/webp/hair-care/hair-care-bloque-4-3-desktop.webp",
+      homeImage: "assets/webp/hair-care/hair-care-bloque-4-3-desktop.webp",
       featuredRank: 3,
       isBestseller: true,
       isNew: false,
@@ -72,8 +72,8 @@
       price: 22,
       badge: "Nuevo",
       description: "Repara y fortalece en profundidad.",
-      image: "assets/Hair care/Hair Care - bloque -4 - 4.jpg",
-      homeImage: "assets/Hair care/Hair Care - bloque -4 - 4.jpg",
+      image: "assets/webp/hair-care/hair-care-bloque-4-4-desktop.webp",
+      homeImage: "assets/webp/hair-care/hair-care-bloque-4-4-desktop.webp",
       featuredRank: 4,
       isBestseller: true,
       isNew: true,
@@ -91,7 +91,7 @@
       price: 10,
       badge: "Sin envase",
       description: "Limpia y revitaliza el cabello seco.",
-      image: "assets/Hair care/Hair Care - bloque -4 - 5.jpg",
+      image: "assets/webp/hair-care/hair-care-bloque-4-5-desktop.webp",
       featuredRank: 5,
       isBestseller: false,
       isNew: false,
@@ -109,7 +109,7 @@
       price: 16,
       badge: "Vegano",
       description: "Activa el cuero cabelludo y da volumen.",
-      image: "assets/Hair care/Hair Care - bloque -4 - 6.jpg",
+      image: "assets/webp/hair-care/hair-care-bloque-4-6-desktop.webp",
       featuredRank: 6,
       isBestseller: false,
       isNew: false,
@@ -127,7 +127,7 @@
       price: 14,
       badge: "Más vendido",
       description: "Aporta volumen y textura natural.",
-      image: "assets/Hair care/Hair Care - bloque -4 - 7.jpg",
+      image: "assets/webp/hair-care/hair-care-bloque-4-7-desktop.webp",
       featuredRank: 7,
       isBestseller: true,
       isNew: false,
@@ -145,7 +145,7 @@
       price: 14,
       badge: "Con envase",
       description: "Suaviza, acondiciona y desenreda.",
-      image: "assets/Hair care/Hair Care - bloque -4 - 8.jpg",
+      image: "assets/webp/hair-care/hair-care-bloque-4-8-desktop.webp",
       featuredRank: 8,
       isBestseller: true,
       isNew: false,
@@ -163,7 +163,7 @@
       price: 11,
       badge: "Vegano",
       description: "Limpia en profundidad sin resecar.",
-      image: "assets/Hair care/Hair Care - bloque -5 - 1.jpg",
+      image: "assets/webp/hair-care/hair-care-bloque-5-1-desktop.webp",
       featuredRank: 9,
       isBestseller: false,
       isNew: false,
@@ -181,7 +181,7 @@
       price: 11,
       badge: "Sin envase",
       description: "Da cuerpo y deja el cabello ligero.",
-      image: "assets/Hair care/Hair Care - bloque -5 - 2.jpg",
+      image: "assets/webp/hair-care/hair-care-bloque-5-2-desktop.webp",
       featuredRank: 10,
       isBestseller: false,
       isNew: false,
@@ -199,7 +199,7 @@
       price: 14,
       badge: "Con envase",
       description: "Acondiciona sin apelmazar.",
-      image: "assets/Hair care/Hair Care - bloque -5 - 3.jpg",
+      image: "assets/webp/hair-care/hair-care-bloque-5-3-desktop.webp",
       featuredRank: 11,
       isBestseller: false,
       isNew: false,
@@ -217,7 +217,7 @@
       price: 16,
       badge: "Con envase",
       description: "Nutre y recupera el cabello dañado.",
-      image: "assets/Hair care/Hair Care - bloque -6 - 1.jpg",
+      image: "assets/webp/hair-care/hair-care-bloque-6-1-desktop.webp",
       featuredRank: 12,
       isBestseller: false,
       isNew: false,
@@ -235,7 +235,7 @@
       price: 24,
       badge: "Nuevo",
       description: "Define rizos con una textura cremosa.",
-      image: "assets/Hair care/Hair Care - bloque -6 - 4.jpg",
+      image: "assets/webp/hair-care/hair-care-bloque-6-4-desktop.webp",
       featuredRank: 13,
       isBestseller: false,
       isNew: true,
@@ -258,6 +258,10 @@
     type: "all",
     sort: "relevance",
     search: "",
+    catalogIndex: 0,
+    catalogAnimating: false,
+    homeIndex: 0,
+    homeAnimating: false,
   };
 
   const elements = {
@@ -290,9 +294,18 @@
     clearCatalogButtons: document.querySelectorAll("[data-clear-catalog-filters]"),
     typeChips: document.querySelectorAll("[data-type-chip]"),
     quickFilters: document.querySelectorAll("[data-quick-filter]"),
+    catalogStackControls: document.querySelector("[data-catalog-stack-controls]"),
+    catalogStackPosition: document.querySelector("[data-catalog-stack-position]"),
+    catalogPrev: document.querySelector("[data-catalog-prev]"),
+    catalogNext: document.querySelector("[data-catalog-next]"),
+    homeStackControls: document.querySelector("[data-home-stack-controls]"),
+    homeStackPosition: document.querySelector("[data-home-stack-position]"),
+    homePrev: document.querySelector("[data-home-prev]"),
+    homeNext: document.querySelector("[data-home-next]"),
   };
 
   const initialResultsLabel = elements.resultsCount?.textContent?.trim() || String(PRODUCTS.length);
+  const catalogStackQuery = window.matchMedia("(max-width: 767px)");
 
   init();
 
@@ -306,6 +319,8 @@
     renderCart();
     syncTypeChips();
     syncCartBadge();
+    catalogStackQuery.addEventListener("change", () => syncCatalogStack(elements.catalogGrid?.children.length || 0));
+    catalogStackQuery.addEventListener("change", syncHomeStack);
   }
 
   function bindPanels() {
@@ -315,6 +330,10 @@
     elements.cartClose?.addEventListener("click", () => toggleCart(false));
     elements.filtersToggle?.addEventListener("click", () => toggleFilters(true));
     elements.filtersClose?.addEventListener("click", () => toggleFilters(false));
+    elements.catalogPrev?.addEventListener("click", () => moveCatalogStack(-1));
+    elements.catalogNext?.addEventListener("click", () => moveCatalogStack(1));
+    elements.homePrev?.addEventListener("click", () => moveHomeStack(-1));
+    elements.homeNext?.addEventListener("click", () => moveHomeStack(1));
 
     elements.overlay?.addEventListener("click", () => closeAllPanels());
 
@@ -544,13 +563,53 @@
         .map((id) => id.trim())
         .filter(Boolean);
       const variant = container.dataset.cardVariant || "home";
-      container.innerHTML = ids
+      const cards = ids
         .map((id) => {
           const product = PRODUCT_MAP.get(id);
-          return product ? createProductCard(product, variant) : "";
+          return product ? `<div class="col-12 col-md-6 col-xl-3">${createProductCard(product, variant)}</div>` : "";
         })
-        .join("");
+        .filter(Boolean);
+
+
+      container.innerHTML = cards.join("");
     });
+    syncHomeStack();
+  }
+
+  function moveHomeStack(direction) {
+    const container = elements.homeProductLists[0];
+    const cards = container?.children;
+    if (!cards?.length || state.homeAnimating) return;
+
+    const nextIndex = (state.homeIndex + direction + cards.length) % cards.length;
+    const incoming = cards[nextIndex];
+    state.homeAnimating = true;
+    incoming.classList.add("is-entering", direction > 0 ? "from-next" : "from-prev");
+    requestAnimationFrame(() => requestAnimationFrame(() => incoming.classList.add("is-entering-active")));
+
+    window.setTimeout(() => {
+      state.homeIndex = nextIndex;
+      incoming.classList.remove("is-entering", "is-entering-active", "from-next", "from-prev");
+      state.homeAnimating = false;
+      syncHomeStack();
+    }, 420);
+  }
+
+  function syncHomeStack() {
+    const container = elements.homeProductLists[0];
+    const cards = container?.children;
+    if (!cards?.length) return;
+
+    [...cards].forEach((card, index) => {
+      const distance = (index - state.homeIndex + cards.length) % cards.length;
+      card.classList.toggle("is-active", distance === 0);
+      card.classList.toggle("is-next", distance === 1);
+      card.classList.toggle("is-after-next", distance === 2);
+      card.inert = catalogStackQuery.matches && distance !== 0;
+    });
+
+    if (elements.homeStackControls) elements.homeStackControls.hidden = !catalogStackQuery.matches;
+    if (elements.homeStackPosition) elements.homeStackPosition.textContent = `${state.homeIndex + 1} / ${cards.length}`;
   }
 
   function renderCatalog() {
@@ -559,13 +618,59 @@
     const activeFilters = readFiltersFromControls();
     const filtered = sortProducts(filterProducts(PRODUCTS, activeFilters), state.sort);
 
-    elements.catalogGrid.innerHTML = filtered.map((product) => createProductCard(product, "catalog")).join("");
+    elements.catalogGrid.innerHTML = filtered
+      .map((product) => `<div class="col-12 col-md-6 col-xl-4">${createProductCard(product, "catalog")}</div>`)
+      .join("");
+    state.catalogIndex = Math.min(state.catalogIndex, Math.max(0, filtered.length - 1));
+    syncCatalogStack(filtered.length);
 
     if (elements.emptyState) {
       elements.emptyState.hidden = filtered.length > 0;
     }
 
     updateResultsCount(filtered.length, activeFilters);
+  }
+
+  function moveCatalogStack(direction) {
+    const cards = elements.catalogGrid?.children;
+    if (!cards?.length || state.catalogAnimating) return;
+
+    const nextIndex = (state.catalogIndex + direction + cards.length) % cards.length;
+    const incoming = cards[nextIndex];
+    state.catalogAnimating = true;
+    incoming.classList.add("is-entering", direction > 0 ? "from-next" : "from-prev");
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => incoming.classList.add("is-entering-active"));
+    });
+
+    window.setTimeout(() => {
+      state.catalogIndex = nextIndex;
+      incoming.classList.remove("is-entering", "is-entering-active", "from-next", "from-prev");
+      state.catalogAnimating = false;
+      syncCatalogStack(cards.length);
+    }, 420);
+  }
+
+  function syncCatalogStack(total) {
+    if (!elements.catalogGrid) return;
+
+    [...elements.catalogGrid.children].forEach((card, index) => {
+      const distance = (index - state.catalogIndex + total) % total;
+      card.classList.toggle("is-active", distance === 0);
+      card.classList.toggle("is-next", distance === 1);
+      card.classList.toggle("is-after-next", distance === 2);
+      if (catalogStackQuery.matches) card.setAttribute("aria-hidden", String(distance > 2));
+      else card.removeAttribute("aria-hidden");
+      card.inert = catalogStackQuery.matches && distance !== 0;
+    });
+
+    if (elements.catalogStackControls) {
+      elements.catalogStackControls.hidden = total < 2 || !catalogStackQuery.matches;
+    }
+    if (elements.catalogStackPosition) {
+      elements.catalogStackPosition.textContent = total ? `${state.catalogIndex + 1} / ${total}` : "";
+    }
   }
 
   function updateResultsCount(count, activeFilters) {
@@ -900,7 +1005,7 @@
       .map(
         (item) => `
         <article class="cart-item">
-          <img class="cart-item__image" src="${escapeAttribute(resolveAssetPath(getResponsiveVariantPath(item.image, "desktop")))}" alt="${escapeAttribute(item.name)}">
+          <img class="cart-item__image" src="${escapeAttribute(assetPath(getResponsiveVariantPath(item.image, "desktop")))}" alt="${escapeAttribute(item.name)}">
           <div class="cart-item__body">
             <h3>${escapeHTML(item.name)}</h3>
             <p class="cart-item__meta">${escapeHTML(item.typeLabel)} · ${escapeHTML(item.category)}</p>
@@ -995,6 +1100,11 @@
 
   function getWebpBasePath(originalPath) {
     const normalized = normalizeAssetPath(originalPath);
+
+    if (normalized.startsWith("assets/webp/")) {
+      return `${assetBase}${normalized.replace(/-(?:mobile|tablet|desktop)\.webp$/i, "")}`;
+    }
+
     const segments = normalized.split("/").filter(Boolean);
 
     if (segments[0] !== "assets" || segments.length < 2) {
@@ -1028,7 +1138,7 @@
 
   function buildResponsiveImageMarkup({ source, alt, sizes, loading = "lazy", fetchPriority, objectPosition = "", className = "" }) {
     const attributes = [
-      `src="${escapeAttribute(resolveAssetPath(getResponsiveVariantPath(source, "desktop")))}"`,
+      `src="${escapeAttribute(assetPath(getResponsiveVariantPath(source, "desktop")))}"`,
       `srcset="${escapeAttribute(getResponsiveSrcSet(source))}"`,
       `sizes="${escapeAttribute(sizes || "100vw")}"`,
       `alt="${escapeAttribute(alt)}"`,
@@ -1041,10 +1151,6 @@
       .join(" ");
 
     return `<img ${attributes}>`;
-  }
-
-  function resolveAssetPath(pathValue) {
-    return assetPath(pathValue);
   }
 
   function escapeHTML(value) {
