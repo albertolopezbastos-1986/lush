@@ -564,6 +564,13 @@ body.filters-open { overflow: hidden; }
   object-fit: cover;
   opacity: 0.7;
 }
+
+@media (max-width: 1199px) {
+  .hero__visual-image--products {
+    border-radius: 0px 100px 0px 0px;
+    box-shadow: inset -8px 0 24px rgba(0, 0, 0, 0.25);
+  }
+}
 .hero__visual--products {
   min-height: clamp(26rem, 46vw, 36rem);
   border-radius: 42px 180px 42px 42px;
@@ -1160,14 +1167,11 @@ body.filters-open { overflow: hidden; }
   grid-template-columns: repeat(2, 1fr);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .combo-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-  
 }
-
-
 
 .combo-grid .combo-card {
   width: 100%;
