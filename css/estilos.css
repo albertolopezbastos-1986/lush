@@ -104,7 +104,7 @@ body.filters-open { overflow: hidden; }
 .section-heading {
   display: grid;
   gap: 0.7rem;
-  margin-bottom: 1.6rem;
+  margin-bottom: 3.6rem;
 }
 
 /* Newsletter */
@@ -506,6 +506,11 @@ body.filters-open { overflow: hidden; }
 }
 /* Shared section rhythm */
 .section { padding: clamp(4rem, 7vw, 6.5rem) 0; }
+.section--bestsellers {
+  padding: 0;
+  padding-top: clamp(4rem, 7vw, 6.5rem);
+}
+
 /* Home hero */
 .hero { position: relative; overflow: clip; }
 .hero--home { padding-top: 1.75rem;
@@ -1148,16 +1153,31 @@ body.filters-open { overflow: hidden; }
   position:relative;
 }
 
+.combo-grid {
+  gap: 16px !important;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .combo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.combo-grid .combo-card {
+  width: 100%;
+  margin: 0;
+}
+
 .hero__grid--products .hero__copy { max-width: 34rem; }
 .seller-card {
   position: relative;
-  min-height: 16rem;
+  border: none;
+  min-height: 420px;
   padding: 0;
   overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--ink);
   color: #fff;
-  box-shadow: var(--shadow-soft);
 }
 .seller-card img {
   position: absolute;
@@ -1195,18 +1215,18 @@ body.filters-open { overflow: hidden; }
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
   color: rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.06);
 }
 .seller-grid {
-  gap: 16px;
-  flex-wrap: nowrap;
+  gap: 16px !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(25% - 12px), 1fr));
 }
 
 .seller-grid .seller-card {
-  flex: 1 1 25%;
-  min-width: 0;
+  width: 100%;
+  margin: 0;
 }
 
 .seller-card:hover img,
