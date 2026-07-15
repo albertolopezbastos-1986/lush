@@ -222,24 +222,6 @@
       isBestseller: false,
       isNew: false,
     },
-    {
-      id: "curl-power",
-      name: "Curl Power",
-      category: "Styling",
-      typeLabel: "Crema de definición",
-      need: ["Hidratación"],
-      hairType: ["Rizado"],
-      ingredients: ["Kukui", "Cupuaçu", "Cacao"],
-      format: "Crema",
-      packaging: "Con envase",
-      price: 24,
-      badge: "Nuevo",
-      description: "Define rizos con una textura cremosa.",
-      image: "assets/webp/hair-care/hair-care-bloque-6-4-desktop.webp",
-      featuredRank: 13,
-      isBestseller: false,
-      isNew: true,
-    },
   ];
 
   const PRODUCT_MAP = new Map(PRODUCTS.map((product) => [product.id, product]));
@@ -258,8 +240,6 @@
     type: "all",
     sort: "relevance",
     search: "",
-    catalogIndex: 0,
-    catalogAnimating: false,
     homeIndex: 0,
     homeAnimating: false,
   };
@@ -302,6 +282,7 @@
     homeStackPosition: document.querySelector("[data-home-stack-position]"),
     homePrev: document.querySelector("[data-home-prev]"),
     homeNext: document.querySelector("[data-home-next]"),
+    catalogSwiper: document.querySelector("[data-catalog-swiper]"),
   };
 
   const initialResultsLabel = elements.resultsCount?.textContent?.trim() || String(PRODUCTS.length);
@@ -319,8 +300,43 @@
     renderCart();
     syncTypeChips();
     syncCartBadge();
-    catalogStackQuery.addEventListener("change", () => syncCatalogStack(elements.catalogGrid?.children.length || 0));
+    syncCatalogMode();
+    catalogStackQuery.addEventListener("change", syncCatalogMode);
     catalogStackQuery.addEventListener("change", syncHomeStack);
+  }
+
+  function initCatalogSwiper() {
+    if (!elements.catalogSwiper || typeof Swiper === "undefined" || window.catalogSwiper) return;
+
+    const swiper = new Swiper(elements.catalogSwiper, {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      grabCursor: true,
+      navigation: {
+        nextEl: elements.catalogNext,
+        prevEl: elements.catalogPrev,
+      },
+      on: {
+        init: updateCatalogSwiperPosition,
+        slideChange: updateCatalogSwiperPosition,
+        resize: updateCatalogSwiperPosition,
+      },
+    });
+
+    window.catalogSwiper = swiper;
+  }
+
+  function syncCatalogMode() {
+    if (catalogStackQuery.matches) {
+      initCatalogSwiper();
+      return;
+    }
+
+    if (window.catalogSwiper) {
+      window.catalogSwiper.destroy(true, true);
+      window.catalogSwiper = null;
+    }
+    syncCatalogStack(elements.catalogGrid?.children.length || 0);
   }
 
   function bindPanels() {
@@ -330,8 +346,6 @@
     elements.cartClose?.addEventListener("click", () => toggleCart(false));
     elements.filtersToggle?.addEventListener("click", () => toggleFilters(true));
     elements.filtersClose?.addEventListener("click", () => toggleFilters(false));
-    elements.catalogPrev?.addEventListener("click", () => moveCatalogStack(-1));
-    elements.catalogNext?.addEventListener("click", () => moveCatalogStack(1));
     elements.homePrev?.addEventListener("click", () => moveHomeStack(-1));
     elements.homeNext?.addEventListener("click", () => moveHomeStack(1));
 
@@ -619,11 +633,14 @@
     const filtered = sortProducts(filterProducts(PRODUCTS, activeFilters), state.sort);
 
     elements.catalogGrid.innerHTML = filtered
-      .slice(0, filtered.length - 1)
-      .map((product) => `<div class="col-12 col-md-6 col-xl-4">${createProductCard(product, "catalog")}</div>`)
+      .map((product) => `<div class="swiper-slide">${createProductCard(product, "catalog")}</div>`)
       .join("");
-    state.catalogIndex = Math.min(state.catalogIndex, Math.max(0, filtered.length - 2));
-    syncCatalogStack(Math.max(0, filtered.length - 1));
+
+    if (window.catalogSwiper && !window.catalogSwiper.destroyed) {
+      window.catalogSwiper.update();
+      window.catalogSwiper.slideTo(0, 0);
+      updateCatalogSwiperPosition(window.catalogSwiper);
+    }
 
     if (elements.emptyState) {
       elements.emptyState.hidden = filtered.length > 0;
@@ -632,46 +649,17 @@
     updateResultsCount(filtered.length, activeFilters);
   }
 
-  function moveCatalogStack(direction) {
-    const cards = elements.catalogGrid?.children;
-    if (!cards?.length || state.catalogAnimating) return;
-
-    const nextIndex = (state.catalogIndex + direction + cards.length) % cards.length;
-    const incoming = cards[nextIndex];
-    state.catalogAnimating = true;
-    incoming.classList.add("is-entering", direction > 0 ? "from-next" : "from-prev");
-
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => incoming.classList.add("is-entering-active"));
-    });
-
-    window.setTimeout(() => {
-      state.catalogIndex = nextIndex;
-      incoming.classList.remove("is-entering", "is-entering-active", "from-next", "from-prev");
-      state.catalogAnimating = false;
-      syncCatalogStack(cards.length);
-    }, 420);
-  }
-
   function syncCatalogStack(total) {
-    if (!elements.catalogGrid) return;
-
-    [...elements.catalogGrid.children].forEach((card, index) => {
-      const distance = (index - state.catalogIndex + total) % total;
-      card.classList.toggle("is-active", distance === 0);
-      card.classList.toggle("is-next", distance === 1);
-      card.classList.toggle("is-after-next", distance === 2);
-      if (catalogStackQuery.matches) card.setAttribute("aria-hidden", String(distance > 2));
-      else card.removeAttribute("aria-hidden");
-      card.inert = catalogStackQuery.matches && distance !== 0;
-    });
-
     if (elements.catalogStackControls) {
       elements.catalogStackControls.hidden = total < 2 || !catalogStackQuery.matches;
     }
-    if (elements.catalogStackPosition) {
-      elements.catalogStackPosition.textContent = total ? `${state.catalogIndex + 1} / ${total}` : "";
-    }
+  }
+
+  function updateCatalogSwiperPosition(swiper) {
+    if (!swiper || !elements.catalogStackPosition) return;
+    const total = swiper.slides.length;
+    elements.catalogStackPosition.textContent = total ? `${swiper.realIndex + 1} / ${total}` : "";
+    syncCatalogStack(total);
   }
 
   function updateResultsCount(count, activeFilters) {
