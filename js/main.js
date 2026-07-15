@@ -619,10 +619,11 @@
     const filtered = sortProducts(filterProducts(PRODUCTS, activeFilters), state.sort);
 
     elements.catalogGrid.innerHTML = filtered
+      .slice(0, filtered.length - 1)
       .map((product) => `<div class="col-12 col-md-6 col-xl-4">${createProductCard(product, "catalog")}</div>`)
       .join("");
-    state.catalogIndex = Math.min(state.catalogIndex, Math.max(0, filtered.length - 1));
-    syncCatalogStack(filtered.length);
+    state.catalogIndex = Math.min(state.catalogIndex, Math.max(0, filtered.length - 2));
+    syncCatalogStack(Math.max(0, filtered.length - 1));
 
     if (elements.emptyState) {
       elements.emptyState.hidden = filtered.length > 0;

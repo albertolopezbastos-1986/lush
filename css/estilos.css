@@ -555,8 +555,9 @@ body.filters-open { overflow: hidden; }
 }
 .hero__visual-image--products {
   overflow: hidden;
-  border-radius: 0px 250px 0px 0px;  
-  max-width: 1336px;
+  border-radius: 0px 250px 0px 0px;
+  padding-right: 0;
+  padding-left: 0;
   max-height: 420px;
   width: 100%;
   height: 100%;
@@ -1146,7 +1147,7 @@ body.filters-open { overflow: hidden; }
 .hero__copy--products {
   position: absolute;
   padding-top: 1.25rem;
-  left: 150px;
+  left: 60px;
 }
 
 .hero__grid--products {
